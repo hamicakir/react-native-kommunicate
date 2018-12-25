@@ -6,6 +6,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 
+import ReactNativeKommunicate;
+
 public class RNReactNativeKommunicateModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
@@ -18,5 +20,10 @@ public class RNReactNativeKommunicateModule extends ReactContextBaseJavaModule {
   @Override
   public String getName() {
     return "RNReactNativeKommunicate";
+  }
+
+  @ReactMethod
+  public static initMessaging(context, APP_ID) {
+      ReactNativeKommunicate.initMessaging(context, APP_ID)
   }
 }
